@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+    --container-bg-color: #333;
+    --left-bg-color: rgba(12, 65, 129, 0.25);
+    --left-btn-hover-color: rgba(15, 73, 144, 1);
+    --right-bg-color: rgba(43, 43, 43, 0.7);
+    --right-btn-hover-color: rgba(92, 92, 92, 1);
+    --hover-width-active: 65%;
+    --hover-width-inactive: 35%;
+    --hover-width-active-mobile: 70%;
+    --hover-width-inactive-mobile: 30%;
+    --transition-speed: 1s;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+.btn, h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+}
+
+h1 {
+    font-size: 4rem;
+    letter-spacing: .6px;
+    line-height: auto;
+    color: #fff;
+    top: 20%;
+    white-space: nowrap;
+}
+
+.btn {
+    display: block;
+    top: 60%;
+    width: 15rem;
+    padding: 1rem 2rem;
+    border-radius: .3rem;
+    text-align: center;
+    color: #fff;
+    border: #fff solid 1px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .4s all ease;
+
+}
+
+.split.left > a.btn:hover {
+    background-color: var(--left-btn-hover-color);
+    border-color:var(--left-btn-hover-color);
+    box-shadow: 0 0 5px 0 var(--left-btn-hover-color);
+}
+
+.split.right > a.btn:hover {
+    background-color: var(--right-btn-hover-color);
+    border-color:var(--right-btn-hover-color);
+    box-shadow: 0 0 5px 0 var(--right-btn-hover-color);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--container-bg-color);
+}
+
+.split {
+   position: absolute;
+   width: 50%;
+   height: 100%;
+   overflow: hidden;
+}
+
+
+.split.left {
+    left: 0;
+    background: url(/assets-main/photography_landing.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.split.right {
+    right: 0;
+    background: url(/assets-main/barber_landing.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.split.left::before, .split.right::before  {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.left::before {
+    background-color: var(--left-bg-color);
+}
+
+.split.right::before {
+    background-color: var(--right-bg-color);
+}
+
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+    transition: var(--transition-speed) all ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width-active);
+}
+
+.hover-left .right {
+    width: var(--hover-width-inactive);
+} 
+
+.hover-left .right::before {
+    z-index: 2;
+}
+
+.hover-right .right {
+    width: var(--hover-width-active);
+}
+
+.hover-right .left {
+    width: var(--hover-width-inactive);
+} 
+
+.hover-right .left::before {
+    z-index: 2;
+}
+
+.hover-right .left h1, .hover-right .left .btn {
+    opacity: 0.7;
+}
+
+@media (max-width: 769px) {
+   h1 {
+    font-size: 2rem;
+   } 
+
+   .btn {
+    width: 12rem;
+   }
+}
+
+@media (max-height: 700px) {
+    .btn {
+        top: 70%
+    }
+}
+
+@Media (max-width: 576px) {
+    h1 {
+        font-size: 1.75rem;
+       } 
+
+    h1 span {
+        display: block;
+        text-align: center;
+        margin-top: .5rem;
+    }
+    
+    .btn {
+        width: 60%;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .hover-right .left > .btn {
+        opacity: 0;
+    }
+
+    .hover-left .right > .btn {
+        opacity: 0;
+    }
+
+    .hover-left .left {
+        width: var(--hover-width-active-mobile);
+    }
+    
+    .hover-left .right {
+        width: var(--hover-width-inactive-mobile);
+    } 
+
+       .hover-right .right {
+        width: var(--hover-width-active-mobile);
+    }
+    
+    .hover-right .left {
+        width: var(--hover-width-inactive-mobile);
+    } 
+} 
