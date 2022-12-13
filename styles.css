@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    margin: 0rem;
+    padding: 0rem;
+    /* no scroll bars */
+    overflow: hidden;
+}
+
+#image-track > .image {
+    width: 20vmin;
+    height: 30vmin;
+    object-fit: cover;
+    object-position:  center;
+    border-radius: .5rem;
+}
+
+#image-track {
+    display: flex;
+    gap: 2vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    cursor: grab;
+}
