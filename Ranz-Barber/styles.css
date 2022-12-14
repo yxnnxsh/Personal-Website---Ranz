@@ -1,16 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
 
 body {
+    position: relative;
     height: 100vh;
     width: 100vw;
     background-color: #000;
     margin: 0rem;
     padding: 0rem;
-    /* no scroll bars */
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
+
+
 
 #image-track > .image {
     width: 20vmin;
@@ -29,3 +35,79 @@ body {
     transform: translate(0%, -50%);
     cursor: grab;
 }
+
+
+.alert--wrapper {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+}
+
+.alert {
+    position: absolute;
+    width: 40vmin;
+    height: 50vmin;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    background-color: #001321;
+    color: #fff;
+    border-radius: 1rem;
+    z-index: 2;
+    overflow-y: scroll;
+}
+
+h3 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: rgb(218, 23, 23);
+    font-weight: 900;
+    white-space: nowrap;
+
+}
+
+.alert__description {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.alert__description p span {
+    font-weight: 900;
+}
+
+.alert > p {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    white-space: nowrap;
+}
+
+.alert button.btn {
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 49, 83, 0.8);
+    box-shadow: 0 0 5px 0 rgba(0, 49, 83, 0.8);
+    padding: .75rem 1.75rem;
+    border: 1px solid rgba(0, 49, 83, 0.8);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+    margin-top: 1rem;
+}
+
+.alert button.btn:hover {
+    border-color: rgba(52, 89, 116, 0.8);
+    background-color: rgba(52, 89, 116, 0.8);
+}
+
